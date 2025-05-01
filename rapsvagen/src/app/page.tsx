@@ -25,7 +25,9 @@ export default function Home() {
           Välkommen till Rapsvägen!
         </h1>
 
-        <p className="text-lg text-black m-[10px]">Snart är det dags för årets stora &quot;Cykelfest utan cykel&quot;! 🚴‍♀️🌞</p>
+        <p className="text-lg text-black m-[10px]">
+  Snart är det dags för årets stora &quot;Cykelfest utan cykel&quot;! 🚴‍♀️🌞
+</p>
 
         <p className="text-base sm:text-lg mb-2 text-black">📅 Datum: 9 Augusti 2025</p>
         <p className="text-base sm:text-lg mb-2 text-black">⏳ Sista anmälningsdag: 30 Juni</p>
@@ -47,8 +49,8 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-bold mb-4 text-green-900">Så här går festen till 🎉</h2>
 
           <p className="mb-4 text-base sm:text-lg">
-            Välkommen till årets stora &quot;Cykelfest utan cykel&quot;!" på Rapsvägen den 9 augusti 2025!
-          </p>
+  Välkommen till årets stora &quot;Cykelfest utan cykel&quot; på Rapsvägen den 9 augusti 2025!
+</p>
 
           <p className="mb-4 text-base sm:text-lg">
             Fyll i formuläret för att anmäla er. Sista anmälningsdag är 30 juni.
