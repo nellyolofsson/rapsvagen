@@ -47,7 +47,7 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-bold mb-4 text-green-900">Så här går festen till 🎉</h2>
 
           <p className="mb-4 text-base sm:text-lg">
-            Välkommen till årets stora "Cykelfest utan cykel" på Rapsvägen den 9 augusti 2025!
+            Välkommen till årets stora &quot;Cykelfest utan cykel&quot;!" på Rapsvägen den 9 augusti 2025!
           </p>
 
           <p className="mb-4 text-base sm:text-lg">
