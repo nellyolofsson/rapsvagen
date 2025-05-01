@@ -22,7 +22,7 @@ export default function Home() {
 
       <div className="text-center min-h-screen p-10 bg-yellow-50/60">
         <h1 className="text-4xl text-green-900 font-bold mb-4">Välkommen till Rapsvägen!</h1>
-        <p className="text-lg text-black m-[10px]">Snart är det dags för årets stora "Cykelfest utan cykel"! 🚴‍♀️🌞</p>
+        <p className="text-lg text-black m-[10px]">Snart är det dags för årets stora &quot;Cykelfest utan cykel&quot;! 🚴‍♀️🌞</p>
 
         <p className="text-lg mb-2 text-black">📅 Datum: 9 Augusti 2025</p>
         <p className="text-lg mb-2 text-black">⏳ Sista anmälningsdag: 30 Juni</p>
