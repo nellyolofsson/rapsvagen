@@ -3,14 +3,14 @@ import Link from 'next/link';
 import Navbar from "./componetns/Navbar";
 import Image from 'next/image';
 import Contact from './componetns/Contact';
-
+import Images from './componetns/Images';
 export default function Home() {
   return (
     <main className="relative min-h-screen font-sans">
       {/* Bakgrundsbild */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/white.jpg"
+          src="/2024-08-06.jpg"
           alt="bakgrund"
           fill
           style={{ objectFit: "cover" }}
@@ -21,7 +21,8 @@ export default function Home() {
 
       <Navbar />
 
-      <div className="text-center min-h-screen px-4 py-10 bg-yellow-50/60 pt-28">
+      <div className="text-center min-h-screen px-4 py-10 bg-white/70 pt-28 ">
+       
         <h1 className="text-2xl sm:text-3xl md:text-4xl text-green-900 font-bold mb-4">
           Välkommen till Rapsvägen!
         </h1>
@@ -85,6 +86,8 @@ export default function Home() {
       <section id="kontakt" className="mt-10">
         <Contact /> 
       </section>
+
+      
         <footer className="mt-20 text-sm text-gray-500">© 2025 Rapsvägens Grannskap</footer>
      </div>
     </main>
