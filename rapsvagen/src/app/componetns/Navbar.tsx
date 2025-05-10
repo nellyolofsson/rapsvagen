@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Contact from './Contact';
+
 
 const Navbar = () => {
   return (
@@ -8,6 +10,8 @@ const Navbar = () => {
         <Link href="/" className="hover:underline font-bold">Hem</Link>
         <Link href="/galleri" className="hover:underline font-bold">Galleri</Link>
         <Link href="/om" className="hover:underline font-bold">Om</Link>
+        <Link href="#kontakt" className="hover:underline font-bold transition-all duration-300">Kontakt
+        </Link>
       </div>
     </nav>
   );

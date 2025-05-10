@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from "./componetns/Navbar";
 import Image from 'next/image';
+import Contact from './componetns/Contact';
 
 export default function Home() {
   return (
@@ -77,8 +78,15 @@ export default function Home() {
           </p>
         </div>
 
+       
+      
+
+      {/* Kontaktformulär */}
+      <section id="kontakt" className="mt-10">
+        <Contact /> 
+      </section>
         <footer className="mt-20 text-sm text-gray-500">© 2025 Rapsvägens Grannskap</footer>
-      </div>
+     </div>
     </main>
   );
 }
