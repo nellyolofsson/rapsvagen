@@ -7,9 +7,14 @@ const Contact = () => {
             <p className="text-base text-gray-800 mb-4 text-center">
                 Har du frågor eller funderingar? Tveka inte att höra av dig!
             </p>
-            <p className="text-base text-gray-800 text-center">
-                📞 Du kan nå oss via dessa nummer: <strong>073-3455452 eller 070-8654692</strong>
-            </p>
+            <p className="text-base text-gray-800 text-center mb-2">
+  📞 Du kan nå oss via: 
+</p>
+
+<div className="text-center space-y-1 text-gray-800">
+  <p><strong>Madeleine Romin:</strong> 073-3455452</p>
+  <p><strong>Nelly Olofsson:</strong> 070-8654692</p>
+</div>
         </div>
     );
 };
