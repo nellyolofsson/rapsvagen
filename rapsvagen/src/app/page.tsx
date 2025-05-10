@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Navbar from "./componetns/Navbar";
 import Image from 'next/image';
 import Contact from './componetns/Contact';
-import Images from './componetns/Images';
+
 export default function Home() {
   return (
     <main className="relative min-h-screen font-sans">
