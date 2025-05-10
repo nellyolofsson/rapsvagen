@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Contact from './Contact';
 
 
 const Navbar = () => {
