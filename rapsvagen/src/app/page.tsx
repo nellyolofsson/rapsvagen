@@ -21,7 +21,7 @@ export default function Home() {
 
       <Navbar />
 
-      <div className="text-center min-h-screen px-4 py-10 bg-yellow-50/60">
+      <div className="text-center min-h-screen px-4 py-10 bg-yellow-50/60 pt-28">
         <h1 className="text-2xl sm:text-3xl md:text-4xl text-green-900 font-bold mb-4">
           Välkommen till Rapsvägen!
         </h1>
