@@ -1,0 +1,10 @@
+# Add this to your pubspec.yaml under flutter:
+#
+# fonts:
+#   - family: NotoColorEmoji
+#     fonts:
+#       - asset: assets/fonts/NotoColorEmoji.ttf
+#
+# Download NotoColorEmoji.ttf from:
+# https://github.com/googlefonts/noto-emoji/blob/main/fonts/NotoColorEmoji.ttf
+# and place it in assets/fonts/

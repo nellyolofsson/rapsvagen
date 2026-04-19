@@ -18,7 +18,18 @@
 /out/
 
 # production
-/build
+/build/
+/.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-versions
+.flutter_export_environment.sh
+.metadata
+.idea/
+.vscode/
+pubspec.lock
+*.iml
 
 # misc
 .DS_Store
