@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'nav.dart';
+import 'gallery.dart';
 
 // ── Färgpalett ────────────────────────────────────────────────────────────────
 const kAmber900 = Color(0xFF412402);
@@ -51,8 +52,8 @@ class _HomePageState extends State<HomePage> {
         onHome: () => _scrollTo(0),
         onInfo: () => _scrollTo(380),
         onProgram: () => _scrollTo(780),
-        // onImage: () => _scrollTo(1180),
-        onContact: () => _scrollTo(1200),
+        onImage: () => _scrollTo(1180),
+        onContact: () => _scrollTo(1400),
       ),
       body: SingleChildScrollView(
         controller: _scroll,
@@ -70,6 +71,8 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(height: 20),
                       _ProgramSection(),
                       SizedBox(height: 20),
+                      GallerySection(),
+                      SizedBox(height: 20),
                       _ContactSection(),
                       SizedBox(height: 40),
                     ],
@@ -84,6 +87,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+// ── Hero ──────────────────────────────────────────────────────────────────────
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 class _HeroSection extends StatelessWidget {

@@ -4,13 +4,13 @@ const kAmber900 = Color(0xFF412402);
 
 // ── Top nav ───────────────────────────────────────────────────────────────────
 class TopNav extends StatelessWidget implements PreferredSizeWidget {
-  final VoidCallback onHome, onInfo, onProgram, onContact;
+  final VoidCallback onHome, onInfo, onProgram, onImage, onContact;
   const TopNav({
     super.key,
     required this.onHome,
     required this.onInfo,
     required this.onProgram,
-    //  required this.onImage,
+    required this.onImage,
     required this.onContact,
   });
 
@@ -31,7 +31,7 @@ class TopNav extends StatelessWidget implements PreferredSizeWidget {
         _NavButton('Hem', onHome),
         _NavButton('Info', onInfo),
         _NavButton('Program', onProgram),
-        //  _NavButton('Galleri', onImage),
+        _NavButton('Galleri', onImage),
         _NavButton('Kontakt', onContact),
         const SizedBox(width: 8),
       ],
