@@ -467,7 +467,7 @@ class _StepCard extends StatelessWidget {
           desc,
           textAlign: TextAlign.center,
           style: const TextStyle(
-            fontSize: 12,
+            fontSize: 13,
             color: Color(0xFF777777),
             height: 1.4,
           ),
