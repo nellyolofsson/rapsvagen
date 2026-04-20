@@ -25,12 +25,23 @@ class TopNav extends StatelessWidget implements PreferredSizeWidget {
         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
       ),
       actions: [
-        _NavButton('Hem', onHome),
-        _NavButton('Info', onInfo),
-        _NavButton('Program', onProgram),
-        _NavButton('Galleri', onGalleri),
-        _NavButton('Kontakt', onContact),
-        const SizedBox(width: 8),
+        LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  _NavButton('Hem', onHome),
+                  _NavButton('Info', onInfo),
+                  _NavButton('Program', onProgram),
+                  _NavButton('Galleri', onGalleri),
+                  _NavButton('Kontakt', onContact),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            );
+          },
+        ),
       ],
     );
   }
