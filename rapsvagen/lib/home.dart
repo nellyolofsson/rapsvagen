@@ -1,7 +1,8 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'nav.dart';
-import 'gallery.dart';
+import 'gallery_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ── Färgpalett ────────────────────────────────────────────────────────────────
 const kAmber900 = Color(0xFF412402);
@@ -52,7 +53,11 @@ class _HomePageState extends State<HomePage> {
         onHome: () => _scrollTo(0),
         onInfo: () => _scrollTo(380),
         onProgram: () => _scrollTo(780),
-        onImage: () => _scrollTo(1180),
+        onGalleri: () {
+          Navigator.of(
+            context,
+          ).push(MaterialPageRoute(builder: (context) => const GalleryPage()));
+        },
         onContact: () => _scrollTo(1400),
       ),
       body: SingleChildScrollView(
@@ -71,7 +76,6 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(height: 20),
                       _ProgramSection(),
                       SizedBox(height: 20),
-                      GallerySection(),
                       SizedBox(height: 20),
                       _ContactSection(),
                       SizedBox(height: 40),
@@ -329,6 +333,16 @@ class _SectionHeader extends StatelessWidget {
 // ── Info section ──────────────────────────────────────────────────────────────
 class _InfoSection extends StatelessWidget {
   const _InfoSection();
+  static final Uri _formUrl = Uri.parse(
+    'https://docs.google.com/forms/d/e/1FAIpQLSfoPv9bLs1WNixQv0qakoQNPn1ay-Xlaaj2SXIa0Dj1Vf3P-A/viewform?usp=dialog',
+  );
+
+  Future<void> _launchForm() async {
+    if (!await launchUrl(_formUrl, mode: LaunchMode.externalApplication)) {
+      throw Exception('Kunde inte öppna formuläret');
+    }
+  }
+
   @override
   Widget build(BuildContext context) => _SectionCard(
     child: Column(
@@ -345,6 +359,29 @@ class _InfoSection extends StatelessWidget {
           'En kväll med grannar, god mat och gott sällskap längs Rapsvägen. '
           'Anmäl dig senast 30 juni för att vara med.',
           style: TextStyle(fontSize: 15, color: Color(0xFF555555), height: 1.7),
+        ),
+        const SizedBox(height: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton.icon(
+              onPressed: _launchForm,
+              icon: const Icon(Icons.edit, size: 18),
+              label: const Text('Anmäl dig här'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: kAmber400,
+                foregroundColor: Colors.white,
+                textStyle: const TextStyle(fontWeight: FontWeight.w500),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 22,
+                  vertical: 12,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            ),
+          ],
         ),
         const SizedBox(height: 16),
         Container(
@@ -467,7 +504,7 @@ class _StepCard extends StatelessWidget {
           desc,
           textAlign: TextAlign.center,
           style: const TextStyle(
-            fontSize: 13,
+            fontSize: 12,
             color: Color(0xFF777777),
             height: 1.4,
           ),
@@ -586,4 +623,3 @@ class _Footer extends StatelessWidget {
     ),
   );
 }
-// href="https://docs.google.com/forms/d/e/1FAIpQLSfoPv9bLs1WNixQv0qakoQNPn1ay-Xlaaj2SXIa0Dj1Vf3P-A/viewform?usp=dialog" target="_blank">

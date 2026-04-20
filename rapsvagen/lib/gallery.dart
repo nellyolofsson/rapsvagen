@@ -7,7 +7,7 @@ class GallerySection extends StatelessWidget {
   Widget build(BuildContext context) {
     // Byt ut bilder och layout efter behov
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 24),
+      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -32,8 +32,6 @@ class GallerySection extends StatelessWidget {
                 asset: 'assets/2024-08-06.jpg',
                 label: '2024-08-06',
               ),
-              _GalleryImage(asset: 'assets/flowers.jpg', label: 'Blommor'),
-              _GalleryImage(asset: 'assets/white.jpg', label: 'Vit'),
             ],
           ),
         ],
@@ -47,33 +45,54 @@ class _GalleryImage extends StatelessWidget {
   final String label;
   const _GalleryImage({required this.asset, required this.label});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 120,
-      height: 90,
-      decoration: BoxDecoration(
-        color: Colors.grey[300],
-        borderRadius: BorderRadius.circular(10),
-        image: DecorationImage(
-          image: AssetImage(asset),
-          fit: BoxFit.cover,
-          onError: (exception, stackTrace) {},
+  void _showImageDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        child: GestureDetector(
+          onTap: () => Navigator.of(context).pop(),
+          child: InteractiveViewer(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset(asset, fit: BoxFit.contain),
+            ),
+          ),
         ),
       ),
-      child: Align(
-        alignment: Alignment.bottomRight,
-        child: Padding(
-          padding: const EdgeInsets.all(6),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-            decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.4),
-              borderRadius: BorderRadius.circular(6),
-            ),
-            child: Text(
-              label,
-              style: const TextStyle(color: Colors.white, fontSize: 11),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => _showImageDialog(context),
+      child: Container(
+        width: 200,
+        height: 150,
+        decoration: BoxDecoration(
+          color: Colors.grey[300],
+          borderRadius: BorderRadius.circular(10),
+          image: DecorationImage(
+            image: AssetImage(asset),
+            fit: BoxFit.cover,
+            onError: (exception, stackTrace) {},
+          ),
+        ),
+        child: Align(
+          alignment: Alignment.bottomRight,
+          child: Padding(
+            padding: const EdgeInsets.all(6),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.4),
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Text(
+                label,
+                style: const TextStyle(color: Colors.white, fontSize: 11),
+              ),
             ),
           ),
         ),

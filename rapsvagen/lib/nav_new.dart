@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-const kAmber900 = Color(0xFF412402);
-
-// ── Top nav ───────────────────────────────────────────────────────────────────
 class TopNav extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onHome, onInfo, onProgram, onGalleri, onContact;
   const TopNav({
@@ -20,7 +17,7 @@ class TopNav extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: kAmber900,
+      backgroundColor: const Color(0xFF412402),
       foregroundColor: Colors.white,
       elevation: 0,
       title: const Text(
