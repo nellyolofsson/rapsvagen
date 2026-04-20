@@ -29,5 +29,7 @@ jobs:
         run: npm install -g vercel@latest
 
       - name: Deploy to Vercel
-        run: |
-          vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --org ${{ secrets.VERCEL_ORG_ID }} --project ${{ secrets.VERCEL_PROJECT_ID }} ./rapsvagen/build/web
+        run: vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }} ./rapsvagen/build/web
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
