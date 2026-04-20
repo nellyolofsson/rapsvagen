@@ -19,9 +19,11 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
+        working-directory: rapsvagen
 
       - name: Build web
         run: flutter build web --release
+        working-directory: rapsvagen
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
@@ -29,5 +31,5 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./build/web
+          working-directory: ./rapsvagen/build/web
           prod: true
