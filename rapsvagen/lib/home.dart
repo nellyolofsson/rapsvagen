@@ -570,7 +570,10 @@ class _ContactCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       border: Border.all(color: Colors.black.withOpacity(0.09), width: 0.5),
     ),
-    child: Row(
+    child: Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      spacing: 14,
+      runSpacing: 8,
       children: [
         CircleAvatar(
           radius: 21,
@@ -584,7 +587,6 @@ class _ContactCard extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(width: 14),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

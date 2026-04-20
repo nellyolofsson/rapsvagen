@@ -20,9 +20,16 @@ class TopNav extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: const Color(0xFF412402),
       foregroundColor: Colors.white,
       elevation: 0,
-      title: const Text(
-        'Rapsvägen 2026',
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+      title: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth < 500) {
+            return const SizedBox.shrink(); // Dölj titel på små skärmar
+          }
+          return const Text(
+            'Rapsvägen 2026',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          );
+        },
       ),
       actions: [
         LayoutBuilder(
