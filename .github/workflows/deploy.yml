@@ -26,10 +26,9 @@ jobs:
         working-directory: rapsvagen
 
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
+        uses: vercel/gh-action@v2
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./rapsvagen/build/web
-          prod: true
